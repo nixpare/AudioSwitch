@@ -118,6 +118,8 @@ func (w *WindowService) updateSaveData() error {
 
 func (w *WindowService) CreateWindow() {
 	if w.window != nil {
+		w.window.Show()
+		w.window.UnMinimise()
 		return
 	}
 
@@ -138,6 +140,7 @@ func (w *WindowService) CreateWindow() {
 
 func (w *WindowService) CreateOverlay() {
 	if w.overlay != nil {
+		w.overlay.Show()
 		return
 	}
 

@@ -27,7 +27,8 @@ go.work.sum
 # Wails3 and SolidJS ignores
 /.task
 /bin
-/build
+/build/appimage
+/build/nsis
 /frontend/bindings
 /frontend/dist
 /frontend/node_modules
