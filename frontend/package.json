@@ -1,0 +1,20 @@
+{
+  "name": "frontend",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --minify false --mode development",
+    "build:prod": "vite build --mode production",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "@wailsio/runtime": "latest",
+    "vite-plugin-solid": "^2.8.2"
+  },
+  "dependencies": {
+    "solid-js": "^1.8.11"
+  }
+}
