@@ -21,6 +21,13 @@ window.addEventListener('resize', (ev) => {
     wails.Events.Emit({ name: "window-resize" })
 })
 
+window.addEventListener('blur', () => {
+    document.body.style = '--body-background-alpha: 1'
+})
+window.addEventListener('focus', () => {
+    document.body.removeAttribute('style')
+})
+
 const [devices, setDevices] = createStore({})
 
 createEffect(() => {

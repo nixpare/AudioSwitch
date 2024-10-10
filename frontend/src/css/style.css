@@ -4,7 +4,6 @@
         sans-serif;
     color-scheme: light dark;
     color: rgba(255, 255, 255, 0.87);
-    background-color: rgba(27, 38, 54, 1);
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -33,6 +32,13 @@ body {
     min-width: 320px;
     min-height: 100vh;
     overflow: hidden;
+}
+
+.background {
+    --body-background-alpha: .6;
+    --body-background-color: rgba(27, 38, 54, var(--body-background-alpha));
+    background-color: var(--body-background-color);
+    transition: background-color .3s;
 }
 
 .container {
@@ -105,7 +111,7 @@ body {
 }
 
 [selected-device] button svg:not(.muted) {
-    padding: .42em 0;
+    padding: .4em 0;
 }
 
 /*
@@ -189,13 +195,17 @@ body {
 */
 
 body.overlay {
-    --wails-draggable: drag;
     min-width: 0;
     min-height: 0;
     width: fit-content;
 }
 
-body.overlay * {
+body.overlay > .container {
+    --wails-draggable: drag;
+    border-radius: .4em;
+}
+
+body.overlay > .container * {
     --wails-draggable: no-drag;
 }
 
@@ -206,6 +216,10 @@ body.overlay * {
 [mute-button] button {
     width: 3em;
     height: 3em;
+}
+
+[mute-button] svg:not(.muted) {
+    padding: .1em 0;
 }
 
 /*

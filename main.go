@@ -104,8 +104,8 @@ func main() {
 		defer wg.Done()
 		// Fake main thread after app.Run()
 		
-		windowService.CreateWindow()
 		windowService.CreateOverlay()
+		windowService.CreateWindow()
 	}()
 
 	if err = app.Run(); err != nil {

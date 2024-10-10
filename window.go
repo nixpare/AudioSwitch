@@ -125,8 +125,12 @@ func (w *WindowService) CreateWindow() {
 
 	w.window = createWindowOptions(&w.WindowState, application.WebviewWindowOptions{
 		Title:            "AudioSwitch Dashboard",
-		BackgroundColour: application.NewRGB(27, 38, 54),
 		URL:              "/",
+
+		BackgroundType: application.BackgroundTypeTranslucent,
+		Windows: application.WindowsWindow{
+			BackdropType: application.Acrylic,
+		},
 	})
 
 	w.window.OnWindowEvent(events.Windows.WindowClose, func(event *application.WindowEvent) {
@@ -146,14 +150,13 @@ func (w *WindowService) CreateOverlay() {
 
 	w.overlay = createWindowOptions(&w.OverlayState, application.WebviewWindowOptions{
 		Title:            "AudioSwitch Overlay",
-		BackgroundColour: application.NewRGB(27, 38, 54),
 		URL:              "/overlay.html",
 
 		Frameless:     true,
 		DisableResize: true,
 
 		Windows: application.WindowsWindow{
-			ExStyle: w32.WS_EX_TOOLWINDOW|w32.WS_EX_TOPMOST,
+			ExStyle: w32.WS_EX_TOOLWINDOW|w32.WS_EX_TOPMOST|w32.WS_EX_LAYERED,
 		},
 
 		DefaultContextMenuDisabled: true,
