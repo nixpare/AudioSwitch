@@ -98,27 +98,14 @@ body {
     align-items: center;
 }
 
-[selected-device] .device~button {
+[selected-device] button {
     width: 3em;
     height: 4em;
     padding: .7em .5em;
 }
 
-[selected-device] .device~button svg:not(.muted) {
-    display: unset;
+[selected-device] button svg:not(.muted) {
     padding: .42em 0;
-}
-
-[selected-device] .device~button svg.muted {
-    display: none;
-}
-
-[selected-device] .device.muted~button svg:not(.muted) {
-    display: none;
-}
-
-[selected-device] .device.muted~button svg.muted {
-    display: unset;
 }
 
 /*
@@ -138,26 +125,10 @@ body {
     gap: 1em;
 }
 
-[device-list] [device] button {
+[device-list] [device] [pref-button] {
     width: 2.5em;
     height: 2.5em;
     padding: .7em .5em;
-}
-
-[device-list] [device] button svg:not(.pref) {
-    display: unset;
-}
-
-[device-list] [device] button svg.pref {
-    display: none;
-}
-
-[device-list] [device].pref button svg:not(.pref) {
-    display: none;
-}
-
-[device-list] [device].pref button svg.pref {
-    display: unset;
 }
 
 /*
@@ -204,7 +175,7 @@ body {
     EXIT
 */
 
-.exit-btn {
+[exit-button] button {
     font-size: 1.2em;
     padding: .7em 1em;
     margin-top: 1em;
@@ -235,22 +206,6 @@ body.overlay * {
 [mute-button] button {
     width: 3em;
     height: 3em;
-}
-
-[mute-button] button svg:not(.muted) {
-    display: unset;
-}
-
-[mute-button] button svg.muted {
-    display: none;
-}
-
-[mute-button] button.muted svg:not(.muted) {
-    display: none;
-}
-
-[mute-button] button.muted svg.muted {
-    display: unset;
 }
 
 /*
